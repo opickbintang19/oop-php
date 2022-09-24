@@ -1,12 +1,30 @@
 <?php 
     class User {
         // prop and method
+        public $username = "ryu";
+        public $email = "ryu@ninja.com";
+
+        public function addFriends(){
+            
+            return "$this->username added a new friends";
+        }
     }
 
     $userOne = new User();
     $userTwo = new User();
 
-    echo get_class($userOne);
+    // echo get_class($userOne);
+    echo $userOne->username . "<br>";
+    echo $userOne->email . "<br>";
+    echo $userOne->addFriends() . "<br>";
+
+    $userTwo->username = 'yoshi';
+    $userTwo->email = 'yoshi@ninja.com';
+
+    echo $userTwo->username . "<br>";
+    echo $userTwo->email . "<br>";
+    echo $userTwo->addFriends() . "<br>";
+
 
 ?>
 

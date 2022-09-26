@@ -1,32 +1,27 @@
 <?php 
     class User {
-        // prop and method
         public $username;
-        public $email;
+        private $email;
 
-
-        public function __construct($username,$email)
-        {
-            $this->username = $username;
-            $this->email = $email;
-        }
-        public function addFriends(){
-            
-            return "$this->username added a new friends";
-        }
+    public function __construct($username, $email){
+      //$this->username = 'ken';
+      $this->username = $username;
+      $this->email = $email;
     }
 
-    $userOne = new User('husain','husain@ninja.com');
-    $userTwo = new User('fadhil','fadhil@ninja.com');
+    public function addFriend(){
+      //return "added a new friend";
+      return "$this->username just added a new friend";
+    }
 
-    // echo get_class($userOne);
-    echo $userOne->username . "<br>";
-    echo $userOne->email . "<br>";
-    echo $userOne->addFriends() . "<br>";
+  }
 
-    echo $userTwo->username . "<br>";
-    echo $userTwo->email . "<br>";
-    echo $userTwo->addFriends() . "<br>";
+  $userOne = new User('mario', 'mario@thenetninja.co.uk');
+  $userTwo = new User('luigi', 'luigi@thenetninja.co.uk');
+
+  echo $userOne->email;
+  echo $userTwo->email;
+
 
 
 ?>

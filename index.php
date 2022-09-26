@@ -25,17 +25,27 @@
             $this->email = $email;
         }
     }
+    
 
   }
   
+  class AdminUser extends User {
+    public $level;
+
+    public function __construct($username, $email, $level)
+    {
+        $this->level=$level;
+        parent::__construct($username,$email);
+    }
+  }
 
   $userOne = new User('mario', 'mario@thenetninja.co.uk');
   $userTwo = new User('luigi', 'luigi@thenetninja.co.uk');
 
-  $userOne->setEmail('janjaemail.com');
-
-  echo $userOne->getEmail() . "<br>";
-
+  $userThree =  new AdminUser('yoshi','yoshi@thenetninja.co.uk',5);
+  echo $userThree->username . "<br>";
+  echo $userThree->getEmail() . "<br>";
+  echo $userThree->level . "<br>";
 
 
 ?>
